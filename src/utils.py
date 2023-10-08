@@ -10,3 +10,15 @@ def get_all_operations(filename):
         return all_operations
 
 
+def filter_operations(all_operations):
+    """
+    Возвращает выполненные операции из списка всех операций
+    """
+    filtered_operations = []
+    for operation in all_operations:
+        if operation.get("state") == "EXECUTED":
+            filtered_operations.append(operation)
+        continue
+    return filtered_operations
+
+

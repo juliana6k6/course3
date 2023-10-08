@@ -1,6 +1,5 @@
-import json
-from src.utils import get_all_operations
+from src.utils import get_all_operations, filter_operations
 filename_ = "operations.json"
 
-print(get_all_operations(filename_))
-
+all_operations = get_all_operations(filename_)
+print(filter_operations(all_operations))
