@@ -17,3 +17,11 @@ def encode_cards(card_number):
     encoded_cn = card_number[0:6] + "*" * 6 + card_number[-4:]
     encoded_cn_split = encoded_cn[0:4] + " " + encoded_cn[4:8] + " " + encoded_cn[8:12] + " " + encoded_cn[12:16]
     return encoded_cn_split
+
+
+def encode_score(score_number):
+    """
+    Шифрует номер счёта
+    """
+    encoded_score = score_number[-6:-4] + "*" * 4
+    return encoded_score
