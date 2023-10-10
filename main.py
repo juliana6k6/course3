@@ -8,7 +8,8 @@ all_operations = get_all_operations(filename_)
 filtered_operations = filter_operations(all_operations)
 sorted_operations_five = sort_operations_five(filtered_operations)
 for operation in sorted_operations_five:
-    date = format_date(operation["date"])
+    date_ISO = operation["date"]
+    date = format_date(date_ISO)
     description_operation = operation["description"]
     initial_count = operation["from"]
     final_count = operation["to"]
@@ -23,4 +24,10 @@ for operation in sorted_operations_five:
         score = count_info[0] + score_form
         score_split = " ".join(score)
         counts_new.append(score)
-print(f""
+    initial_count_new = counts_new[0]
+    final_count_new = counts_new[1]
+    sum_operation = operation["operationAmount"]["amount"]
+    currency_operation = operation["operationAmount"]["currency"]["name"]
+    print(f"""{date} {description_operation}
+{initial_count_new} > {final_count_new}
+{sum_operation} {currency_operation}""")
