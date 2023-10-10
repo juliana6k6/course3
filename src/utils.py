@@ -25,4 +25,4 @@ def sort_operations_five(filtered_operations):
     """
     Сортирует операции по дате
     """
-    return sorted(filtered_operations, key=lambda operation: operation["date"])[-5:]
+    return sorted(filtered_operations, key=lambda operation: operation["date"], reverse=True)[-5:]
